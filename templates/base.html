@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@3.2.1"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">-->
+    <link rel = "icon" href = "/static/image/icon.png"    type = "image/x-icon"> 
+    <nav>
+        <ul>
+            <li><a class="active" href="/">Predict Blood Glucose Level  </a></li>
+            <li><a class = "Visualize" href="/Visualize/">Visualize</a></li>
+            <li><a Class="contact" href="/contact/">Contact</a></li>
+                      
+            
+        </ul>
+    </nav>
+    <style>
+      
+       nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          border: 1px solid #e7e7e7;
+          background-color:orange;
+          font-size: 12;
+          font-style: italic;
+        }
+        input[type=checkbox], input[type=radio] :hover{
+                    margin-left: 0;
+                    margin-top: 1px\9;
+                    line-height: normal;
+                    }
+                    input[type=submit]:hover {
+                  background-color: #45a049;
+                }
+       nav li {
+          float: left;
+        }
+        
+        nav li a {
+          display: block;
+          color: #666;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+       nav  li a:hover:not(.active) {
+          background-color: #ddd;
+        }
+        
+        nav li a {
+          color: white;
+          background-color: lightseagreen;
+        }
+        img {
+              width: 100%;
+              height: 100%;
+              object-fit:contain;
+            }
+            div form{
+              box-shadow: 3px 5px 3px 7px rgb(74, 74, 150);
+              position: relative;
+              text-align: center;
+              box-sizing: content-box;
+              border-radius: 35px;
+              height: fit-content;
+              width: fit-content;
+              background-color:peachpuff;
+              margin: auto;
+              padding: 2rem;
+              margin-bottom: 2rem
+              /*margin-top: 3rem;
+              margin-left: 20rem;
+              margin-right: 10rem;
+              margin-bottom: 3rem;*/
+              
+              }
+              input:invalid {
+                        border: 2px dashed red;
+                      }
+
+                      input:invalid:required {
+                        background-image: linear-gradient(to right, pink, lightgreen);
+                      }
+
+                      input:valid {
+                        border: 2px solid black;
+                      }
+        </style>
+    {% block head %} 
+ 
+      {% endblock%}
+</head>
+<body>
+    
+    
+    
+    {% block body %} 
+
+    
+    
+    {% endblock %}
+  
+  
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+</body>
+
+<footer>
+    <style>
+    footer {
+        position: fixed;
+     
+      bottom: 0;
+      width: 50%;
+     
+    
+      text-align: center;
+     
+    }
+    
+</style>
+{% block footer %}
+    &copy; Copyright 2020 by <a href="">Asfetaw Abay</a>.
+    {% endblock %}
+</footer>
+
+
+</html>

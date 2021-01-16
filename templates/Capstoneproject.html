@@ -1,0 +1,160 @@
+{%extends 'base.html' %}
+
+{% block head %}
+
+<title>Predicting Progression of your Diabetes</title>
+<style>
+  input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+  
+  div.Predict{
+    object-position: center;
+     box-sizing: content-box;
+    text-align: center;
+    border-radius: 35px;
+     border: 2px solid orange;
+     padding: 20px; 
+     margin: auto;
+     width: fit-content;
+     height:fit-content; 
+     object-fit: fill;
+  }
+  /* Chart table CSS*/
+#Chart {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#Chart td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#Chart tr:nth-child(even){background-color: #f2f2f2;}
+
+#Chart tr:hover {background-color:orange;}
+
+#Chart th {
+  
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:palegreen;
+  
+}
+table
+{
+  margin: 20px;
+  margin-right: 2rem;
+}
+
+</style>
+
+ {% endblock%}
+
+
+ {% block body %}
+ 
+
+<div class="projectphase">
+    <h2 style="text-align: center;"> Capstone Project </h2>
+   
+  <!-- Input Form-->
+
+ <form action="/mainform" method="POST" id="mainform">
+    
+    <fieldset>
+        <legend>Predicting progression of diabetes</legend>
+    <!----'age', 'sex', 'body mass index', 'blood pressure','serum1', 'serum2', 'serum3', 'serum4', 'serum5', 'serum6'-->
+          
+        <label for="Age">Age:</label>
+        <input type="text" id="Age" name="Age" placeholder="Age " required><br><br>
+        <fieldset id='sex_group'>
+          <div class ="Sex input Group">
+            <label for="sex">Sex:</label><br>
+            <label class="container">Male
+                <input type="radio" value="male" name="sex_group"  >
+                <span class="checkmark"></span>
+              </label>
+              
+              <label class="container">Female
+                <input type="radio"value="female" name="sex_group" >
+                <span class="checkmark"></span><br>
+              </label> <br>
+          </div>
+      </fieldset>   
+        <label for="BMI">Body Mass Index:</label>
+        <input type="text" id="BMI" name="BMI" placeholder="BMI " required><br><br>
+        <label for="BP">Blood Pressure:</label>
+        <input type="text" id="BP" name="BP" placeholder="BP" required><br><br>
+        <label for="serum1">serum1:</label>
+        <input type="text" id="serum1" name="serum1" placeholder=" 1st serum blood level test" required><br><br>
+        <label for="serum2">serum2:</label>
+        <input type="text" id="serum2" name="serum2" placeholder="2nd serum blood level test" required><br><br>
+        <label for="serum3">serum3:</label>
+        <input type="text" id="serum3" name="serum3" placeholder="3rd serum blood level test" required><br><br>
+        <label for="serum4">serum4:</label>
+        <input type="text" id="serum4" name="serum4" placeholder="4th serum blood level test"><br><br>
+        <label for="serum5">serum5:</label>
+        <input type="text" id="serum5" name="serum5" placeholder="5th serum blood level test"><br><br><br>
+        <label for="serum5">serum6:</label>
+        <input type="text" id="serum6" name="serum6" placeholder="6th serum blood level test"><br><br><br>
+        <input type="submit" value="Predict">
+  </fieldset>
+</form>
+<div class="Predict">
+<h1>Your Diabetic will be </h1><br>
+<p style="border-color: rgb(245, 8, 40); text-decoration: crimson;color: red;text-shadow: royalblue;">{{ Result }}</p>
+<p>Your blood glucose Level shows it is :</p> <br>
+<p>{{ Flag }}</p>
+</div>
+
+<h2>Blood Sugar Levels Chart</h2>
+<table id="Chart">
+  <tr>
+    <th>Condition</th>
+    <th>Fasting (mg/dl)</th>
+    <th>2hr Post Meal (mg/dl)</th>
+    <th>Random (mg/dl)</th>
+    
+  </tr>
+  <tr>
+    <td>Normal</td>
+    <td>55 to 109</td>
+    <td>less than  140</td>
+    <td>less than  200</td>
+  </tr>
+  <tr>
+    <td>Pre-diabetic</td>
+    <td>100 to 125 </td>
+    <td>140 to 200 </td>
+    <td>200 and above</td>
+  </tr>
+  <tr>
+    <td>Diabetic</td>
+    <td>126 and above</td>
+    <td>200 and above </td>
+    <td>200 and above</td>
+  </tr>
+  
+</table>
+
+<a href="https://www.diabetesselfmanagement.com/managing-diabetes/blood-glucose-management/blood-sugar-chart/"  target="_blank">Blood SugarChart </a>
+<h2>Useful links  </h2>
+<ol>
+<li><a href="https://www.diabetes.org/diabetes-risk" target="_blank">Diabetic Risks</a></li>
+<li><a href="https://www.diabetes.org.uk/diabetes-the-basics/diabetes-symptoms" target="_blank">The common symptoms of diabetes</a></li>
+</ol>
+    
+</div>
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock%}
+    
+{% block footer %} {% endblock%}

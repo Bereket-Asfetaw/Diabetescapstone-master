@@ -1,0 +1,120 @@
+{%extends 'base.html' %}
+
+{% block head %}
+
+<title>Visualize project objects</title>
+
+ {% endblock%}
+
+ 
+ {% block body %}
+ <style>
+  img {
+  border-radius: 30px;
+  padding: 50px;
+  object-position: center;
+  height: 300;
+  width: fit-content;
+  position: relative;
+ 
+}
+
+ </style>
+
+ <h1>Data Exploration  and hyperparameter Tunning </h1>
+ <details>
+     <summary>Diabetic risk factors</summary>
+     <img src="/static/image/Explore_Data.jpg" alt="ByGroup" width="200" height="200">
+     <img src="/static/image/DataDistribution.jpg" alt="Histogram of Demographic">
+     <img src="/static/image/DataDistributionserum.jpg" alt="Histogram of Serum">
+  </details>
+  <details>
+    <summary>Progression of the Diabetic by Gender</summary>
+     <img src="/static/image/bygroup.jpg" alt="ByGroup" width="200" height="200">
+  </details>
+ 
+   <details>
+    <summary>ML Model :Algorithm/ModelComparison</summary>
+
+          <details>
+            <summary>ML Model :Graphically</summary>
+            <img src="/static/image/ModelComparison.jpg" alt="">
+          </details>
+            <details>
+              
+              <summary>ML Model :Coefficient of Determination</summary>
+              <p>Test Performance</p> <br>
+
+              <table border="1" class="Testperformance">
+                <thead>
+                      <tr style="text-align: right;">
+                      <th></th>
+                            <th>Test_size( 0.1 )</th>
+                            <th>Test_size( 0.2 )</th>
+                            <th>Test_size( 0.3 )</th>
+                            <th>Test_size( 0.5 )</th>
+                            </tr>  
+                    </thead>
+                                <tbody>
+                                      <tr>
+                                            <th>RF_score</th>
+                                                <td>0.50204</td>
+                                                  <td>0.42699</td>
+                                                  <td>0.472331</td>
+                                                  <td>0.402148</td>
+                                      </tr>
+                                        <tr>
+                                              <th>Ridge_score</th>
+                                              <td>0.547403</td>
+                                              <td>0.460835</td>
+                                              <td>0.480069</td>
+                                              <td>0.482</td>
+                                        </tr>
+                                          <tr>
+                                          <th>RidgeCV_score</th>
+                                            <td>0.552091</td>
+                                              <td>0.454139</td>
+                                              <td>0.477593</td>
+                                              <td>0.47782</td>
+                                              </tr>   
+                                              <tr>     
+                                                <th>KNN_score</th>
+                                                <td>0.567214</td>
+                                                <td>0.430651</td>
+                                                <td>0.390131</td>
+                                                <td>0.396529</td>
+                                              </tr>
+                                                <tr>
+                                                  <th>LNR_score</th>
+                                                  <td>0.55142</td>
+                                                  <td>0.443254</td>
+                                                  <td>0.47729</td>
+                                                  <td>0.476706</td>
+                                                </tr>
+                                    </tbody>
+              </table>
+              <p>Training Perfromance</p>
+              <table border="1" class="Trainingperformance">\n  <thead>\n    <tr style="text-align: right;">\n      <th></th>\n      <th>Test_size( 0.1 )</th>\n      <th>Test_size( 0.2 )</th>\n      <th>Test_size( 0.3 )</th>\n      <th>Test_size( 0.5 )</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>RF_score</th>\n      <td>0.917282</td>\n      <td>0.926727</td>\n      <td>0.915993</td>\n      <td>0.917365</td>\n    </tr>\n    <tr>\n      <th>Ridge_score</th>\n      <td>0.506554</td>\n      <td>0.520577</td>\n      <td>0.516593</td>\n      <td>0.522427</td>\n    </tr>\n    <tr>\n      <th>RidgeCV_score</th>\n      <td>0.512309</td>\n      <td>0.527632</td>\n      <td>0.524098</td>\n      <td>0.530456</td>\n    </tr>\n    <tr>\n      <th>KNN_score</th>\n      <td>0.520011</td>\n      <td>0.526628</td>\n      <td>0.520759</td>\n      <td>0.521865</td>\n    </tr>\n    <tr>\n      <th>LNR_score</th>\n      <td>0.512515</td>\n      <td>0.525637</td>\n      <td>0.524412</td>\n      <td>0.534075</td>\n    </tr>\n  </tbody>\n</table>
+
+            </details>
+   </details>
+    <details>
+      <summary>ML Model : Cross_Valid_RandomForest</summary>
+     <img src="/static/image/Cross_Valid_RandomForest_n_estimator.jpg" alt="">
+   </details>
+   <details>
+    <summary>ML Model :Cross_Valid_Ridge</summary>
+    <img src="/static/image/Cross_Valid_Ridge.jpg" alt="">
+  </details>
+  <details>
+    <summary>ML Model :KNNRegressor</summary>
+    <img src="/static/image/Cross_Valid_Knn.jpg" alt="">
+  </details>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ {% endblock%}
+    
+{% block footer %} {% endblock%}
